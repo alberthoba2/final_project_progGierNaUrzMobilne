@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Łap Piłkę PRO</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+<div class="menu">
+<button onclick="startGame('touch')">Sterowanie dotykowe</button>
+<button onclick="startGame('tilt')">Sterowanie przechylaniem</button>
+<div class="highscores" id="highscores"></div>
+</div>
+<div class="game-container hidden">
+<canvas id="gameCanvas"></canvas>
+<div class="hud">
+<div>Punkty: <span id="score">0</span></div>
+<div>Życia: <span id="lives">5</span></div>
+<div id="active-effects"></div>
+</div>
+</div>
+<div class="game-over hidden">
+<h2>Koniec gry!</h2>
+<p>Wynik: <span id="final-score">0</span></p>
+<input type="text" id="player-name" placeholder="Podaj swoje imię">
+<button onclick="saveScore()">Zapisz wynik</button>
+</div>
+<script type="module" src="script.js?v=2"></script>
+</body>
+</html>
